@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
-}
+ /* :root {} */
+ body[data-theme="dark"] {
+   --color-primary: #0E0F10;
+   --color-heading: #D3DBDE;
+   --color-text: #A1A7AA;
+   --color-blue: #177cff;
+ }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+ body[data-theme="light"] {
+   --color-primary: #DFE8EC;
+   --color-heading: #002233;
+   --color-text: #365463;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+   --color-blue: #177cff;
+ }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+ body {
 
-.App-link {
-  color: #61dafb;
-}
+   --shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ .container14 {
+   width: 84%;
+   margin: 0 auto;
+ }
+
+ .row {
+   padding: 0;
+   margin: 0;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ ul,
+ p {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+ }
+
+ a {
+   text-decoration: none;
+   color: var(--text-black);
+ }
+
+
+ h2 {
+   font-size: 4.4rem;
+   line-height: 1.5em;
+ }
+
+ h4 {
+   font-size: 3.5rem !important;
+   line-height: 1.5em;
+ }
+
+ h5 {
+   font-size: 2.4rem !important;
+   line-height: 1.5em;
+ }
+
+ h6 {
+   font-size: 2rem;
+   line-height: 1.5em;
+ }
+
+ .container {
+   margin: 0 12rem;
+ }
+
+ .modeIcon {
+   cursor: pointer;
+   display: flex;
+   color: var(--color-heading);
+   font-size: 2.4rem;
+ }
+
+ /* Navbar */
+ header {
+   background-color: var(--color-primary);
+   box-shadow: var(--shadow);
+ }
+
+ .navlogo {
+   font-size: 3rem;
+   font-weight: bolder;
+   color: var(--color-blue);
+ }
+
+
+ .navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .nav-ul {
+   display: flex;
+   align-items: center;
+ }
+
+ .nav-item {
+   padding: 2rem;
+ }
+
+ .navlink {
+   font-weight: 500;
+   transition: 0.3s;
+ }
+
+ .navlink.active,
+ .navlink:hover {
+   color: var(--color-blue);
+ }
+
+
+
+
+ @media screen and (min-width: 1400px) and (max-width: 1599px) {
+   html {
+     font-size: 9px;
+   }
+ }
+
+
+ @media screen and (min-width: 1200px) and (max-width: 1399px) {
+   html {
+     font-size: 9px;
+   }
+ }
+
+ @media screen and (min-width: 992px) and (max-width: 1199px) {
+   html {
+     font-size: 8px;
+   }
+ }
+
+ @media screen and (min-width: 768px) and (max-width: 991px) {
+   html {
+     font-size: 8px;
+   }
+ }
+
+ @media only screen and (max-width: 991px) {
+   html {
+     font-size: 8px;
+   }
+ }

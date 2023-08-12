@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: Poppins;
+  src: url(./assets/Fonts/poppins-v20-latin-300.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(./assets/Fonts/poppins-v20-latin-regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(./assets/Fonts/poppins-v20-latin-500.ttf);
+  font-weight: 500;
+
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(./assets/Fonts/poppins-v20-latin-700.ttf);
+  font-weight: 700;
+
+}
+
+
+html {
+  font-size: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-primary);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+  font-size: 1.8rem;
+}

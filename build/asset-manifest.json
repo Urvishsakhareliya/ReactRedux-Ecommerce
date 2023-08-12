@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/ReactRedux-Ecommerce/static/css/main.4d74b457.css",
+    "main.js": "/ReactRedux-Ecommerce/static/js/main.6b136159.js",
+    "static/js/787.47054480.chunk.js": "/ReactRedux-Ecommerce/static/js/787.47054480.chunk.js",
+    "static/media/poppins-v20-latin-300.ttf": "/ReactRedux-Ecommerce/static/media/poppins-v20-latin-300.6cc700ae42da226508cf.ttf",
+    "static/media/poppins-v20-latin-regular.ttf": "/ReactRedux-Ecommerce/static/media/poppins-v20-latin-regular.80946c0880373b223d9c.ttf",
+    "static/media/poppins-v20-latin-500.ttf": "/ReactRedux-Ecommerce/static/media/poppins-v20-latin-500.c5bf954f85d4e113650f.ttf",
+    "static/media/poppins-v20-latin-700.ttf": "/ReactRedux-Ecommerce/static/media/poppins-v20-latin-700.69376764e54ecb0c5b5b.ttf",
+    "static/media/logo.svg": "/ReactRedux-Ecommerce/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/ReactRedux-Ecommerce/index.html",
+    "main.4d74b457.css.map": "/ReactRedux-Ecommerce/static/css/main.4d74b457.css.map",
+    "main.6b136159.js.map": "/ReactRedux-Ecommerce/static/js/main.6b136159.js.map",
+    "787.47054480.chunk.js.map": "/ReactRedux-Ecommerce/static/js/787.47054480.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d74b457.css",
+    "static/js/main.6b136159.js"
+  ]
+}
