@@ -25,7 +25,7 @@ function Navbar() {
             <ul className="nav-ul">
               <li className="nav-item">
                 <NavLink className="navlink" to="/">
-                  HOME Urvish
+                  HOME
                 </NavLink>
               </li>
               <li className="nav-item">
