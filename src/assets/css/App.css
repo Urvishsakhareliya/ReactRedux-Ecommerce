@@ -66,7 +66,12 @@
  }
 
  .containerX {
-   margin: 0 12rem;
+   --containerX: 12rem;
+   margin: 0 var(--containerX);
+ }
+
+ .colorPrimary {
+   color: var(--color-heading)
  }
 
  img {
@@ -90,7 +95,7 @@
    align-items: center;
    position: sticky;
    top: 0;
-   z-index: 9999;
+   z-index: 100;
  }
 
  .navlogo {
@@ -142,6 +147,7 @@
  .main-banner .rightImage svg {
    mix-blend-mode: difference;
    max-height: 80vh;
+   width: auto;
  }
 
  .main-banner .main-text {
@@ -168,9 +174,19 @@
 
 
 
+ @media screen and (min-width: 1600px) and (max-width: 1799px) {
+   .containerX {
+     --containerX: 9rem;
+   }
+ }
+
  @media screen and (min-width: 1400px) and (max-width: 1599px) {
    html {
      font-size: 9px;
+   }
+
+   .containerX {
+     --containerX: 9rem;
    }
  }
 
@@ -179,23 +195,110 @@
    html {
      font-size: 9px;
    }
+
+   .containerX {
+     --containerX: 5rem;
+   }
  }
 
  @media screen and (min-width: 992px) and (max-width: 1199px) {
    html {
      font-size: 8px;
    }
- }
 
- @media screen and (min-width: 768px) and (max-width: 991px) {
-   html {
-     font-size: 8px;
+   .containerX {
+     --containerX: 7rem;
    }
  }
 
  @media only screen and (max-width: 991px) {
    html {
      font-size: 8px;
+   }
+
+   .main-banner .rightImage svg {
+     max-height: 50vh;
+   }
+
+   /* navbar */
+   .blackLayer {
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 100vh;
+     width: 100vw;
+     background-color: rgba(32, 32, 32, 0.486);
+     z-index: 9990;
+     backdrop-filter: blur(4px);
+   }
+
+   .nav-ul {
+     position: fixed;
+     left: -200%;
+     top: 0;
+     height: 100%;
+     background-color: var(--color-heading);
+     width: 60%;
+     transition: 0.4s;
+     z-index: 9999;
+
+   }
+
+   .navlink {
+     color: var(--color-primary);
+
+   }
+
+   .nav-ul.active {
+     display: block;
+     left: 0;
+
+   }
+
+   .nav-item {
+     padding: 1rem 2rem;
+   }
+
+   .mob_logo {
+     padding: 1rem 0;
+     border-bottom: 1px solid var(--color-primary);
+     margin-bottom: 1rem;
+   }
+
+   .mob_logo .navlogo {
+     justify-content: center;
+   }
+
+
+ }
+
+ @media screen and (min-width: 768px) and (max-width: 991px) {
+   html {
+     font-size: 8px;
+   }
+
+   .containerX {
+     --containerX: 5rem;
+   }
+ }
+
+ @media screen and (min-width: 576px) and (max-width: 767px) {
+   .containerX {
+     --containerX: 3rem;
+   }
+ }
+
+ @media only screen and (max-width: 575px) {
+   html {
+     font-size: 8px;
+   }
+
+   .containerX {
+     --containerX: 2rem;
+   }
+
+   h2 {
+     font-size: 3.5rem;
    }
  }
 

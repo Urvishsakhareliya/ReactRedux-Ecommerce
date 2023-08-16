@@ -6,13 +6,14 @@ function MainBanner() {
   return (
     <div className="main-banner">
       <div className="containerX row align-items-center">
-        <div className="col-6">
+        <div className="col-md-6 text-center text-md-start order-1 order-md-0">
           <h2 className="main-text fw-bolder">
-            One-stop Shop for <br />
+            One-stop Shop for <br className="d-none d-lg-block" />
             Buying abd Selling
           </h2>
           <p className="description_text mt-4">
-            Browse, bu, and sell everything you need convenent place. <br />
+            Browse, bu, and sell everything you need convenent place.{" "}
+            <br className="d-none d-lg-block" />
             connect with sellers and buyer worldwilde for a seamless shopping
             experirnce
           </p>
@@ -21,7 +22,7 @@ function MainBanner() {
             <FiShoppingCart className="ms-3" />
           </NavLink>
         </div>
-        <div className="col-md-6 text-center rightImage">
+        <div className="col-md-6 text-center rightImage ">
           {/* <img src={mainBanner} alt="Main Banner" className="img-fluid" /> */}
           <svg
             width="408"

@@ -3,10 +3,12 @@ import LogoLight from "../assets/Images/logo-light.svg";
 import LogoDark from "../assets/Images/logo-dark.svg";
 import { NavLink } from "react-router-dom";
 import { MdOutlineLightMode, MdLightMode } from "react-icons/md";
+import { TiThMenu } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 import Mode from "../redux/action/mode";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const [MyMode] = useSelector((state) => state.Mode);
 
   const dispatch = useDispatch();
@@ -17,12 +19,31 @@ function Navbar() {
   return (
     <>
       <header>
+        {isOpen ? (
+          <div
+            className="blackLayer d-lg-none"
+            onClick={() => setIsOpen(false)}
+          ></div>
+        ) : (
+          ""
+        )}
+
         <div className="containerX">
           <nav className="navbar">
+            <TiThMenu
+              className="d-lg-none colorPrimary"
+              onClick={() => setIsOpen(true)}
+            />
+
             <NavLink className="navlogo" to="/">
               <img src={MyMode === "dark" ? LogoDark : LogoLight} alt="" />
             </NavLink>
-            <ul className="nav-ul">
+            <ul className={`nav-ul ${isOpen ? "active" : ""}`}>
+              <li className="nav-item d-block d-lg-none mob_logo">
+                <NavLink className="navlogo" to="/">
+                  <img src={MyMode === "dark" ? LogoLight : LogoDark} alt="" />
+                </NavLink>
+              </li>
               <li className="nav-item">
                 <NavLink className="navlink" to="/">
                   HOME
@@ -43,6 +64,9 @@ function Navbar() {
                   Wish list
                 </NavLink>
               </li>
+            </ul>
+
+            <ul className="FlexUl">
               <li className="nav-item modeIcon">
                 {MyMode === "dark" ? (
                   <MdLightMode onClick={() => dispatch(Mode("light"))} />
