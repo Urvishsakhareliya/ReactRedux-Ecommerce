@@ -1,5 +1,6 @@
 import React from "react";
+import MainBanner from "../component/MainBanner";
 
 export default function Home() {
-  return <h1>HOME</h1>;
+  return <MainBanner />;
 }

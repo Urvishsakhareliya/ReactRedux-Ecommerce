@@ -14,26 +14,26 @@ code {
 
 @font-face {
   font-family: Poppins;
-  src: url(./assets/Fonts/poppins-v20-latin-300.ttf);
+  src: url(../Fonts/poppins-v20-latin-300.ttf);
   font-weight: 300;
 }
 
 @font-face {
   font-family: Poppins;
-  src: url(./assets/Fonts/poppins-v20-latin-regular.ttf);
+  src: url(../Fonts/poppins-v20-latin-regular.ttf);
   font-weight: 400;
 }
 
 @font-face {
   font-family: Poppins;
-  src: url(./assets/Fonts/poppins-v20-latin-500.ttf);
+  src: url(../Fonts/poppins-v20-latin-500.ttf);
   font-weight: 500;
 
 }
 
 @font-face {
   font-family: poppins;
-  src: url(./assets/Fonts/poppins-v20-latin-700.ttf);
+  src: url(../Fonts/poppins-v20-latin-700.ttf);
   font-weight: 700;
 
 }
@@ -57,5 +57,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
-  font-size: 1.8rem;
+  font-size: 2rem;
 }

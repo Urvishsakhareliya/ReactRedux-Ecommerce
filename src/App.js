@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
+// import logo from "./logo.svg";
+import "./assets/css/App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";

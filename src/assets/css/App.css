@@ -1,0 +1,203 @@
+ /* :root {} */
+ body[data-theme="dark"] {
+   --color-primary: #0E0F10;
+   --color-heading: #D3DBDE;
+   --color-text: #A1A7AA;
+   --color-blue: #177cff;
+ }
+
+ body[data-theme="light"] {
+   --color-primary: #DFE8EC;
+   --color-heading: #002233;
+   --color-text: #365463;
+
+   --color-blue: #177cff;
+ }
+
+ body {
+
+   --shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
+
+
+
+ .row {
+   padding: 0;
+   margin: 0;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ ul,
+ p {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+ }
+
+ a {
+   text-decoration: none;
+   color: var(--text-black);
+ }
+
+
+ h2 {
+   font-size: 4.4rem;
+   line-height: 1.5em;
+ }
+
+ h4 {
+   font-size: 3.5rem !important;
+   line-height: 1.5em;
+ }
+
+ h5 {
+   font-size: 2.4rem !important;
+   line-height: 1.5em;
+ }
+
+ h6 {
+   font-size: 2rem;
+   line-height: 1.5em;
+ }
+
+ .containerX {
+   margin: 0 12rem;
+ }
+
+ img {
+   max-height: 100%;
+   max-width: 100%;
+ }
+
+ .modeIcon {
+   cursor: pointer;
+   display: flex;
+   color: var(--color-heading);
+   font-size: 2.4rem;
+ }
+
+ /* Navbar */
+ header {
+   background-color: var(--color-primary);
+   box-shadow: var(--shadow);
+   height: 7rem;
+   display: grid;
+   align-items: center;
+   position: sticky;
+   top: 0;
+   z-index: 9999;
+ }
+
+ .navlogo {
+   display: flex;
+   align-items: center;
+ }
+
+ .navlogo img {
+   max-width: 10rem;
+ }
+
+
+
+ .navbar {
+   display: flex;
+   /* align-items: center; */
+   justify-content: space-between;
+ }
+
+ .nav-ul {
+   display: flex;
+   align-items: center;
+ }
+
+ .nav-item {
+   padding: 0 2rem;
+ }
+
+ .navlink {
+   font-weight: 500;
+   transition: 0.3s;
+ }
+
+ .navlink.active,
+ .navlink:hover {
+   color: var(--color-blue);
+ }
+
+
+ /* Home Main-Banner */
+
+
+ .main-banner {
+   height: 100vh;
+   display: grid;
+   align-content: center;
+ }
+
+ .main-banner .rightImage svg {
+   mix-blend-mode: difference;
+   max-height: 80vh;
+ }
+
+ .main-banner .main-text {
+   color: var(--color-heading);
+ }
+
+ .main-banner .ShopNow_btn {
+   background-color: var(--color-heading);
+   color: var(--color-primary);
+   padding: 1rem 2rem;
+   border: 1px solid var(--color-heading);
+   border-radius: 10px;
+ }
+
+ .main-banner .ShopNow_btn:hover {
+   background-color: var(--color-primary);
+   color: var(--color-heading);
+
+ }
+
+
+
+
+
+
+
+ @media screen and (min-width: 1400px) and (max-width: 1599px) {
+   html {
+     font-size: 9px;
+   }
+ }
+
+
+ @media screen and (min-width: 1200px) and (max-width: 1399px) {
+   html {
+     font-size: 9px;
+   }
+ }
+
+ @media screen and (min-width: 992px) and (max-width: 1199px) {
+   html {
+     font-size: 8px;
+   }
+ }
+
+ @media screen and (min-width: 768px) and (max-width: 991px) {
+   html {
+     font-size: 8px;
+   }
+ }
+
+ @media only screen and (max-width: 991px) {
+   html {
+     font-size: 8px;
+   }
+ }
+
+ /* Commando - hotstar */
+ /* heart Of Stone */
