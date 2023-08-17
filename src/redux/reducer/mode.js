@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { LightDarkMode } from "../action/actionType";
 
 const initialState = ["dark"];
