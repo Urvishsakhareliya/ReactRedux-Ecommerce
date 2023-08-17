@@ -65,7 +65,6 @@ function Navbar() {
                 </NavLink>
               </li>
             </ul>
-
             <ul className="FlexUl">
               <li className="nav-item modeIcon">
                 {MyMode === "dark" ? (
