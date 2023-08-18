@@ -7,7 +7,6 @@ import "@splidejs/react-splide/css";
 // import '@splidejs/react-splide/css/sea-green';
 
 function OurTopCategories({ CategoriesData }) {
-  console.log(CategoriesData);
   const { isLoading, TopCategories } = CategoriesData;
   const options = {
     type: "loop",
@@ -34,9 +33,8 @@ function OurTopCategories({ CategoriesData }) {
   return (
     <div className="topCategories">
       <div className="containerX">
-        <h2 className="text-uppercase  headingText position-relative d-inline-block">
-          {isLoading ? "true" : "Our Top Categories"}
-          {/* Our Top Categories */}
+        <h2 className="text-uppercase colorPrimary headingText position-relative d-inline-block">
+          Our Top Categories
         </h2>
       </div>
 

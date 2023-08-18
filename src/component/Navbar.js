@@ -31,7 +31,7 @@ function Navbar() {
         <div className="containerX">
           <nav className="navbar">
             <TiThMenu
-              className="d-lg-none colorPrimary"
+              className="d-lg-none colorHeading"
               onClick={() => setIsOpen(true)}
             />
 

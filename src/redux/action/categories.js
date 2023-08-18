@@ -1,4 +1,9 @@
-import { SetError, SetLoading, TopCategories } from "./actionType";
+import {
+  FeatureProduct,
+  SetError,
+  SetLoading,
+  TopCategories,
+} from "./actionType";
 
 export const Categories = (data) => {
   return {
@@ -14,5 +19,10 @@ export const Loading = () => {
 export const Error = () => {
   return {
     type: SetError,
+  };
+};
+export const OurFeatureProduct = () => {
+  return {
+    type: FeatureProduct,
   };
 };
