@@ -247,11 +247,41 @@
 
  /* Discount banner */
 
+ /* Talk to us */
+ .TalkToUs h2 {
+   font-size: 5rem !important;
+   font-weight: 900;
+   letter-spacing: 2px;
+ }
+
+ .TalkToUs .makeInquiry {
+   background-color: var(--color-heading);
+   color: var(--color-primary);
+   padding: 1rem 2rem;
+   border: 1px solid var(--color-heading);
+   border-radius: 10px;
+ }
+
+ .TalkToUs .makeInquiry:hover {
+   background-color: var(--color-primary);
+   color: var(--color-heading);
+ }
 
 
 
+ /* Footer */
+ .FooterSec {
+   background-color: var(--color-heading);
+   padding: 6rem 0;
+ }
 
+ .FooterSec h2 {
+   font-size: 6rem;
+ }
 
+ .socialTEXT {
+   font-weight: 500;
+ }
 
 
 
