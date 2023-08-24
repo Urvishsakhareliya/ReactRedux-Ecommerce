@@ -4,3 +4,7 @@ export const TopCategories = "Top_Categories";
 export const FeatureProduct = "Feature_Product";
 export const SetLoading = "SET_LOADING";
 export const SetError = "SET_Error";
+export const GetProducts = "Get_All_Products";
+export const FilterProduct = "Filter_Products";
+export const GetFilterValue = "Get_Filter_Value";
+export const SortProduct = "Short_Product";

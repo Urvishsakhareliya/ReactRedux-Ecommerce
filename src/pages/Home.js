@@ -3,46 +3,51 @@ import MainBanner from "../component/MainBanner";
 import OurTopCategories from "../component/OurTopCategories";
 import OurFeaturedProduct from "../component/OurFeaturedProduct";
 import DiscountBanner from "../assets/Images/discount-banner.png";
-import axios from "axios";
+// import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Categories,
-  Error,
-  Loading,
-  OurFeatureProduct,
-} from "../redux/action/categories";
+// import {
+//   Categories,
+//   Error,
+//   Loading,
+//   OurFeatureProduct,
+// } from "../redux/action/categories";
 import { Link, NavLink } from "react-router-dom";
 import { RiInstagramFill } from "react-icons/ri";
 import { SiYoutubemusic } from "react-icons/si";
 import { BsFacebook } from "react-icons/bs";
 import { TfiLinkedin } from "react-icons/tfi";
+import getAllProducts from "../helpers/getApiData";
+import { Categories, OurFeatureProduct } from "../redux/action/categories";
 
 export default function Home() {
-  const Api = "https://api.pujakaitem.com/api/products";
-  const CategoriesData = useSelector((state) => state.CategoriesReducer);
-  // console.log(CategoriesData);
+  // const Api = "https://api.pujakaitem.com/api/products";
+  const AllReducer = useSelector((state) => state);
+  const { AllProductsReducer, CategoriesReducer } = AllReducer;
 
   const dispatch = useDispatch();
 
-  const getProducts = async (url) => {
-    dispatch(Loading());
-    try {
-      const res = await axios.get(url);
-      const products = await res.data;
-      dispatch(Categories(products));
-      dispatch(OurFeatureProduct());
-    } catch (error) {
-      dispatch(Error());
-    }
-  };
+  // const getProducts = async (url) => {
+  //   dispatch(Loading());
+  //   try {
+  //     const res = await axios.get(url);
+  //     const products = await res.data;
+  //     dispatch(Categories(products));
+  //     dispatch(OurFeatureProduct());
+  //   } catch (error) {
+  //     dispatch(Error());
+  //   }
+  // };
   useEffect(() => {
-    getProducts(Api);
+    getAllProducts(dispatch);
   }, []);
+  useEffect(() => {
+    dispatch(Categories(AllProductsReducer.AllProduct));
+  }, [AllProductsReducer]);
   return (
     <>
       <MainBanner />
-      <OurTopCategories CategoriesData={CategoriesData} />
-      <OurFeaturedProduct CategoriesData={CategoriesData} />
+      <OurTopCategories />
+      {/* <OurFeaturedProduct CategoriesData={CategoriesData} /> */}
 
       <Link>
         <div className="discountBanner sec-margin containerX">

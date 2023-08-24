@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function OurFeaturedProduct({ CategoriesData }) {
   const { OurFeatureProduct, TopCategories } = CategoriesData;
-  console.log(OurFeatureProduct, TopCategories);
+  // console.log(OurFeatureProduct, TopCategories);
 
   return (
     <div className="OurFeaturedProduct sec-margin">

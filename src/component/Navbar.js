@@ -50,7 +50,7 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="navlink" to="cart">
+                <NavLink className="navlink" to="Product">
                   Products
                 </NavLink>
               </li>
@@ -60,7 +60,7 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="navlink" to="cart">
+                <NavLink className="navlink" to="WishList">
                   Wish list
                 </NavLink>
               </li>

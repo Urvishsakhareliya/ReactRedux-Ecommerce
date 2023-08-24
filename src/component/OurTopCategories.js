@@ -2,12 +2,13 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
+import { useSelector } from "react-redux";
 
-// import '@splidejs/react-splide/css/skyblue';
-// import '@splidejs/react-splide/css/sea-green';
+function OurTopCategories() {
+  const categoriesData = useSelector((state) => state.CategoriesReducer);
+  const { TopCategories } = categoriesData;
+  // console.log(TopCategories.length === 0);
 
-function OurTopCategories({ CategoriesData }) {
-  const { isLoading, TopCategories } = CategoriesData;
   const options = {
     type: "loop",
     gap: "10px",
@@ -39,7 +40,7 @@ function OurTopCategories({ CategoriesData }) {
       </div>
 
       <div className="categorySlider">
-        {isLoading ? (
+        {TopCategories.length === 0 ? (
           <h2>Loading...</h2>
         ) : (
           <Splide options={options} extensions={{ AutoScroll }}>
