@@ -26,12 +26,10 @@ function Products() {
   const dispatch = useDispatch();
   useEffect(() => {
     getAllProducts(dispatch);
-    console.log("call");
   }, []);
 
   useEffect(() => {
     dispatch(FilterAllProduct(AllProductsReducer.AllProduct));
-    console.log("call");
   }, [AllProductsReducer]);
   return (
     <>
