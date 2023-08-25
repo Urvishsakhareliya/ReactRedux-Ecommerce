@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { AllProducts, Error, Loading } from "../redux/action/AllProduct";
 
 import getAllProducts from "../helpers/getApiData";
-import { FilterAllProduct } from "../redux/action/FilterProductsAction";
+// import { FilterAllProduct } from "../redux/action/FilterProductsAction";
 import ProductItem from "../component/ProductItem";
 import { useState } from "react";
 
@@ -23,9 +23,9 @@ function Products() {
     getAllProducts(dispatch);
   }, []);
 
-  useEffect(() => {
-    dispatch(FilterAllProduct(AllProductsReducer.AllProduct));
-  }, [AllProductsReducer]);
+  // useEffect(() => {
+  //   dispatch(FilterAllProduct(AllProductsReducer.AllProduct));
+  // }, [AllProductsReducer]);
   return (
     <>
       <div className="containerX">
