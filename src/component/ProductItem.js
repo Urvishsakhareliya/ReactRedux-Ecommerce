@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function ProductItem({ CurEle }) {
   const { id, title, thumbnail, price, rating, discountPercentage } = CurEle;
@@ -12,7 +12,7 @@ function ProductItem({ CurEle }) {
   return (
     <>
       <li className="ProductItem" id={id}>
-        <Link>
+        <NavLink to={`/ProductDetails/${id}`}>
           <div className="imageBx">
             <img src={thumbnail} alt="" className="img-fluid" />
           </div>
@@ -36,7 +36,7 @@ function ProductItem({ CurEle }) {
               </p>
             </div>
           </div>
-        </Link>
+        </NavLink>
       </li>
     </>
   );

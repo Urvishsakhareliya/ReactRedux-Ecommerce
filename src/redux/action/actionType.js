@@ -11,3 +11,4 @@ export const SortProduct = "Short_Product";
 export const clrAllFilter = "Clear_All_Filter";
 export const SortValue = "Get_sort_Value";
 export const ProductSort = "Sorting_Product";
+export const SingleProduct = "Single_Product";

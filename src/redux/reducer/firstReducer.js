@@ -1,7 +1,7 @@
 import { FirstAction } from "../action/actionType";
 
 const initialState = [];
-const firstReducer = (state = initialState, action) => {
+export const firstReducer = (state = initialState, action) => {
   switch (action.type) {
     case FirstAction:
       return [...state, ...action.payload];

@@ -13,7 +13,7 @@ const initialState = {
   Sorting_value: "All",
   Filter: {
     SearchValue: "",
-    categories: "All",
+    categories: ["smartphones", "laptops"],
     brand: "All",
     maxPrice: 0,
     price: 0,
@@ -81,7 +81,6 @@ export const FilterProductReducer = (state = initialState, action) => {
       }
       if (brand !== "All") {
         tempFilterProduct = tempFilterProduct.filter((curEle) => {
-          console.log(brand);
           return curEle.brand === brand;
         });
       }

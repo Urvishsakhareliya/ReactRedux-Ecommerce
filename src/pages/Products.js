@@ -47,6 +47,7 @@ function Products() {
       ? document.querySelector("body").classList.add("overflow-hidden")
       : document.querySelector("body").classList.remove("overflow-hidden");
   }, [isFilter]);
+
   return (
     <>
       <div className="containerX">

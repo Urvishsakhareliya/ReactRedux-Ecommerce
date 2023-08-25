@@ -433,6 +433,74 @@
    grid-template-columns: auto 18rem;
  }
 
+ .FilterWrapper {
+   position: sticky;
+   top: 9rem;
+ }
+
+ .main_image {
+   border: 1px solid var(--color-heading);
+   text-align: center;
+ }
+
+
+
+ .proRow {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 4rem;
+ }
+
+ .proRow .price {
+   font-size: 3rem;
+ }
+
+ .proRow .star {
+   color: #ff8f00;
+ }
+
+ .proRow .counter {
+   background-color: var(--color-heading);
+   font-size: 3rem;
+   font-weight: 500;
+ }
+
+ .proRow .counter span {
+   width: 100px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: var(--color-primary);
+   height: 50px;
+ }
+
+ .proRow .counter button {
+   border: 0;
+   background-color: var(--color-text);
+   width: 50px;
+   height: 50px;
+   transition: 0.3s;
+ }
+
+ .proRow .counter button:hover {
+   background-color: var(--color-blue);
+ }
+
+ .proRow .AddToCart {
+   background-color: var(--color-heading);
+   border: 1px solid var(--color-heading);
+   color: var(--color-primary);
+   font-size: 2rem;
+   border-radius: 5px;
+   padding: 0.8rem 2rem;
+   font-weight: 500;
+ }
+
+ .proRow .AddToCart:hover {
+   background-color: transparent;
+   color: var(--color-heading);
+ }
 
  /* Commando - hotstar */
  /* heart Of Stone */
