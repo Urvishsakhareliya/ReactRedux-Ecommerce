@@ -23,9 +23,9 @@ function Products() {
     getAllProducts(dispatch);
   }, []);
 
-  useEffect(() => {
-    dispatch(FilterAllProduct(AllProductsReducer.AllProduct));
-  }, [AllProductsReducer]);
+  // useEffect(() => {
+  //   dispatch(FilterAllProduct(AllProductsReducer.AllProduct));
+  // }, [AllProductsReducer]);
   return (
     <>
       <div className="containerX">
