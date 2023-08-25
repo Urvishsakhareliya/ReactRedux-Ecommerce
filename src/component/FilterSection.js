@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import "bootstrap/dist/js/bootstrap.bundle";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   SortingProducts,
   updateValueFilter,

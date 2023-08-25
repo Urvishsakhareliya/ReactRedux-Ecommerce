@@ -25,11 +25,25 @@ function Products() {
   useEffect(() => {
     dispatch(FilterAllProduct(AllProductsReducer.AllProduct));
   }, [AllProductsReducer]);
+
+  useEffect(() => {
+    isFilter
+      ? document.querySelector("body").classList.add("overflow-hidden")
+      : document.querySelector("body").classList.remove("overflow-hidden");
+  }, [isFilter]);
   return (
     <>
       <div className="containerX">
         <div className="row mt-5">
-          <div className="col-lg-4 col-xl-3 d-none d-lg-block filter_Sec">
+          <div
+            className={`col-lg-4 col-xl-3 filter_Sec ${
+              isFilter ? "active" : ""
+            }`}
+          >
+            <div
+              className="mobLine d-lg-none"
+              onClick={() => setIsFilter(false)}
+            ></div>
             <FilterSection FilterProductReducer={FilterProductReducer} />
           </div>
           <div className="col-12 col-lg-8 col-xl-9">
@@ -47,6 +61,11 @@ function Products() {
       >
         Filter
       </button>
+
+      <div
+        className={`blackLayer ${isFilter ? "" : "d-none"}`}
+        onClick={() => setIsFilter(false)}
+      ></div>
     </>
   );
 }

@@ -137,15 +137,55 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: var(--color-heading);
+        background-color: var(--color-blue);
         font-size: 2.5rem;
         border: 0;
         padding: 0.8rem 0;
         font-weight: 500;
         border-radius: 10px 10px 0 0;
+        color: var(--color-heading);
     }
 
-    .filter_Sec {}
+
+
+    .filter_Sec {
+        position: fixed;
+        background-color: var(--color-primary);
+        left: 0;
+        bottom: -200%;
+        padding: 3rem;
+        /* max-height: 380px; */
+        border-radius: 10px 10px 0 0;
+        z-index: 9999;
+        transition: 0.3s;
+    }
+
+    .filter_Sec.active {
+
+        bottom: 0;
+    }
+
+    .filter_Sec .Filter_Acc {
+
+        padding: 2rem 0;
+
+    }
+
+    .Filter_Acc .accordion-body {
+        max-height: 200px;
+    }
+
+    .mobLine {
+        width: 6rem;
+        height: 5px;
+        border-radius: 10px;
+        background-color: var(--color-heading);
+        position: absolute;
+        top: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 
 
 }
