@@ -1,5 +1,11 @@
-import { useEffect } from "react";
-import { Fake, FilterProduct, GetFilterValue, SortProduct } from "./actionType";
+import {
+  FilterProduct,
+  GetFilterValue,
+  ProductSort,
+  SortProduct,
+  SortValue,
+  clrAllFilter,
+} from "./actionType";
 
 export const FilterAllProduct = (data) => {
   return {
@@ -20,5 +26,21 @@ export const updateValueFilter = (e) => {
 export const SortingProducts = () => {
   return {
     type: SortProduct,
+  };
+};
+export const ClrFilter = () => {
+  return {
+    type: clrAllFilter,
+  };
+};
+export const FilterSortValue = (data) => {
+  return {
+    type: SortValue,
+    payload: data,
+  };
+};
+export const FilterProductSort = () => {
+  return {
+    type: ProductSort,
   };
 };

@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import {
   SortingProducts,
   updateValueFilter,
+  ClrFilter,
 } from "../redux/action/FilterProductsAction";
 
 function FilterSection({ FilterProductReducer }) {
@@ -12,9 +13,7 @@ function FilterSection({ FilterProductReducer }) {
 
   const {
     All_products,
-    Filter_Product,
-    Sorting_value,
-    Filter: { SearchValue, categories, brand, maxPrice, price, minPrice },
+    Filter: { categories, brand },
   } = FilterProductReducer;
   // console.log(categories);
   const getUniqueData = (data, property) => {
@@ -24,16 +23,12 @@ function FilterSection({ FilterProductReducer }) {
     return (newVal = ["All", ...new Set(newVal)]);
   };
 
-  useEffect(() => {
-    dispatch(SortingProducts());
-  }, [categories, brand]);
-
   const categoriesData = getUniqueData(All_products, "category");
   const brands = getUniqueData(All_products, "brand");
 
   return (
     <>
-      <h3 className="fs-1 colorHeading">Filters</h3>
+      <h3 className="fs-1 colorHeading mb-3">Filters</h3>
 
       <div className="accordion Filter_Acc" id="FilterSec">
         <div className="accordion-item">
@@ -60,12 +55,14 @@ function FilterSection({ FilterProductReducer }) {
                 return (
                   <li className="filter_Item form-check" key={key}>
                     <input
-                      className="form-check-input"
+                      className={`form-check-input ${
+                        item === categories ? "true" : ""
+                      }`}
                       type="radio"
                       value={item}
                       id={item}
                       name="categories"
-                      defaultChecked={item === "All"}
+                      defaultChecked={item === categories}
                       onClick={(e) => dispatch(updateValueFilter(e))}
                     />
                     <label className="form-check-label" htmlFor={item}>
@@ -106,7 +103,7 @@ function FilterSection({ FilterProductReducer }) {
                       value={item}
                       id={item}
                       name="brand"
-                      defaultChecked={item === "All"}
+                      defaultChecked={item === brand}
                       onClick={(e) => dispatch(updateValueFilter(e))}
                     />
                     <label className="form-check-label" htmlFor={item}>
@@ -118,6 +115,15 @@ function FilterSection({ FilterProductReducer }) {
             </ul>
           </div>
         </div>
+      </div>
+
+      <div className="text-center mt-4">
+        <button
+          className="btn clrFilter_btn"
+          onClick={() => dispatch(ClrFilter())}
+        >
+          Clear Filter
+        </button>
       </div>
     </>
   );

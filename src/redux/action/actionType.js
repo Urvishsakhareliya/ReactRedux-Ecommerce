@@ -8,3 +8,6 @@ export const GetProducts = "Get_All_Products";
 export const FilterProduct = "Filter_Products";
 export const GetFilterValue = "Get_Filter_Value";
 export const SortProduct = "Short_Product";
+export const clrAllFilter = "Clear_All_Filter";
+export const SortValue = "Get_sort_Value";
+export const ProductSort = "Sorting_Product";
