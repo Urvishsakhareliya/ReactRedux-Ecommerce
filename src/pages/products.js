@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import FilterSection from "../component/FilterSection";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 // import { AllProducts, Error, Loading } from "../redux/action/AllProduct";
@@ -15,12 +15,7 @@ function Products() {
   const [isFilter, setIsFilter] = useState(false);
   const AllReducer = useSelector((state) => state);
   const { AllProductsReducer, FilterProductReducer } = AllReducer;
-  const {
-    All_products,
-    Filter_Product,
-    Sorting_value,
-    Filter: { SearchValue, categories, brand },
-  } = FilterProductReducer;
+  const { Filter_Product } = FilterProductReducer;
   // console.log(Filter_Product);
 
   const dispatch = useDispatch();
