@@ -4,6 +4,7 @@ import { CategoriesReducer } from "./CategoriesReducer";
 import { AllProductsReducer } from "./AllProductsReducer";
 import { FilterProductReducer } from "./FilterProductsReducer";
 import { GetSingleProductReducer } from "./GetSingleProductReducer";
+import { CartReducer } from "./CartReducer";
 
 const rootReducer = combineReducers({
   Mode,
@@ -11,5 +12,6 @@ const rootReducer = combineReducers({
   AllProductsReducer,
   FilterProductReducer,
   GetSingleProductReducer,
+  CartReducer,
 });
 export default rootReducer;

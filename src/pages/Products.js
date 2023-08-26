@@ -18,6 +18,7 @@ import { RiSearch2Line } from "react-icons/ri";
 
 function Products() {
   // const Api = "https://dummyjson.com/products";
+
   const dispatch = useDispatch();
   const [isFilter, setIsFilter] = useState(false);
   const AllReducer = useSelector((state) => state);

@@ -21,6 +21,7 @@ import { Categories, OurFeatureProduct } from "../redux/action/categories";
 
 export default function Home() {
   // const Api = "https://api.pujakaitem.com/api/products";
+
   const AllReducer = useSelector((state) => state);
   const { AllProductsReducer, CategoriesReducer } = AllReducer;
 
@@ -43,6 +44,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(Categories(AllProductsReducer.AllProduct));
   }, [AllProductsReducer]);
+
   return (
     <>
       <MainBanner />

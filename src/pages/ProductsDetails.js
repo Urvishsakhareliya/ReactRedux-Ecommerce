@@ -1,18 +1,21 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { BiStar, BiSolidStarHalf, BiSolidStar } from "react-icons/bi";
 
 import { useDispatch, useSelector } from "react-redux";
 import GetSingleProducts from "../helpers/GetSingleProducts";
 import { useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import { CartAction } from "../redux/action/CartAction";
 
 function ProductsDetails() {
   const dispatch = useDispatch();
   const [counter, setCounter] = useState(1);
 
-  const SingleProData = useSelector((state) => state.GetSingleProductReducer);
-  const { isError, isLoading, SingleProducts } = SingleProData;
+  const AllReducer = useSelector((state) => state);
+  const { GetSingleProductReducer } = AllReducer;
+
+  const { isError, isLoading, SingleProducts } = GetSingleProductReducer;
   const {
     id,
     brand,
@@ -96,9 +99,15 @@ function ProductsDetails() {
             </div>
 
             <div className="d-block mt-5">
-              <button className="btn AddToCart">
+              <NavLink
+                to="/cart"
+                className="btn AddToCart"
+                onClick={() =>
+                  dispatch(CartAction({ counter, ...SingleProducts }))
+                }
+              >
                 Add To Cart <FiShoppingCart className="ms-3" />
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
