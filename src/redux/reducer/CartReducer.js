@@ -15,8 +15,8 @@ const initialState = {
 };
 export const CartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SetLocalCart:
-      return { ...state, cart: action.payload };
+    // case SetLocalCart:
+    //   return { ...state, cart: action.payload };
     case AddToCart:
       const {
         id,
@@ -32,6 +32,7 @@ export const CartReducer = (state = initialState, action) => {
         return curEle.id === id;
       });
       if (existingProduct) {
+        console.log(existingProduct);
         let updatedProduct = state.cart.map((CurEle) => {
           if (CurEle.id === id) {
             let newCounter = CurEle.counter + counter;
@@ -39,6 +40,8 @@ export const CartReducer = (state = initialState, action) => {
               newCounter = stock;
             }
             return { ...CurEle, counter: newCounter };
+          } else {
+            return CurEle;
           }
         });
         return { ...state, cart: updatedProduct };

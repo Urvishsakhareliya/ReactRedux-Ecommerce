@@ -511,13 +511,21 @@
 
  .proUl {
    display: grid;
-   grid-template-columns: 20rem auto 10rem;
+   grid-template-columns: 20rem auto;
    gap: 20px;
    align-items: center;
    border: 1px solid #a5a5a5;
    border-radius: 10px;
    overflow: hidden;
    padding: 10px;
+   position: relative;
+ }
+
+ .proUl .wrapper {
+   display: grid;
+   grid-template-columns: auto 10rem;
+   gap: 20px;
+   align-items: center;
  }
 
  .proUl .Item {
@@ -589,6 +597,7 @@
    width: var(--wh);
    height: var(--wh);
    transition: 0.3s;
+   color: var(--color-primary);
  }
 
  .proUl .counter button:hover {

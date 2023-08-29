@@ -7,6 +7,7 @@ import {
   CartIncrement,
   DeleteProduct,
   LocalStorageData,
+  getLocalCart,
 } from "../redux/action/CartAction";
 import { useEffect } from "react";
 
@@ -14,24 +15,15 @@ export default function Cart() {
   const dispatch = useDispatch();
   const CartReducer = useSelector((state) => state.CartReducer);
   const { cart, TotalCartItem, TotalAmount, ShippingFees } = CartReducer;
-
-  const getLocalCart = () => {
-    let GetLocalData = localStorage.getItem("LocalCartData");
-    if (GetLocalData === [] || GetLocalData === "null") {
-      return [];
-    } else {
-      return JSON.parse(GetLocalData);
-    }
-  };
-
+  // console.log(cart);
   useEffect(() => {
     dispatch(AllItemTotal());
     localStorage.setItem("LocalCartData", JSON.stringify(cart));
+    // console.log(getLocalCart());
   }, [cart]);
 
   useEffect(() => {
-    debugger;
-    dispatch(LocalStorageData(getLocalCart()));
+    dispatch(LocalStorageData(1));
   }, []);
 
   const Discount = (price, discount) => {
@@ -55,74 +47,76 @@ export default function Cart() {
               counter,
             } = CurEle;
             return (
-              <ul className="proUl" key={index}>
-                <li className="item">
+              <div className="proUl" key={index}>
+                <div className="item">
                   <div className="imgBox">
                     <img src={thumbnail} alt="" />
                   </div>
-                </li>
-                <li className="Item ">
-                  <div className="Fields">
-                    <p>Product Name :</p>
-                    <p>{title}</p>
+                </div>
+                <div className="wrapper">
+                  <div className="Item ">
+                    <div className="Fields">
+                      <p>Product Name :</p>
+                      <p>{title}</p>
+                    </div>
+                    <div className="Fields">
+                      <p>Price :</p>
+                      <p>
+                        {new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          maximumSignificantDigits: 3,
+                        }).format(Discount(price, discountPercentage) * 100)}
+                      </p>
+                    </div>
+                    <div className="Fields">
+                      <p>Discounts :</p>
+                      <p className="text-decoration-line-through">
+                        {new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          maximumSignificantDigits: 2,
+                        }).format(((price * discountPercentage) / 100) * 100)}
+                      </p>
+                    </div>
+                    <div className="Fields">
+                      <p>Subtotal :</p>
+                      <p>
+                        {new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          maximumSignificantDigits: 3,
+                        }).format(
+                          Discount(price, discountPercentage) * 100 * counter
+                        )}
+                      </p>
+                    </div>
+                    <div className="Fields">
+                      <p>Items :</p>
+                      <p className="text-decoration-line-through">
+                        <span className="counter d-inline-flex align-items-center">
+                          <button onClick={() => dispatch(CartDecrement(id))}>
+                            -
+                          </button>
+                          <span>{counter}</span>
+                          <button onClick={() => dispatch(CartIncrement(id))}>
+                            +
+                          </button>
+                        </span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="Fields">
-                    <p>Price :</p>
-                    <p>
-                      {new Intl.NumberFormat("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                        maximumSignificantDigits: 3,
-                      }).format(Discount(price, discountPercentage) * 100)}
-                    </p>
-                  </div>
-                  <div className="Fields">
-                    <p>Discounts :</p>
-                    <p className="text-decoration-line-through">
-                      {new Intl.NumberFormat("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                        maximumSignificantDigits: 2,
-                      }).format(((price * discountPercentage) / 100) * 100)}
-                    </p>
-                  </div>
-                  <div className="Fields">
-                    <p>Subtotal :</p>
-                    <p>
-                      {new Intl.NumberFormat("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                        maximumSignificantDigits: 3,
-                      }).format(
-                        Discount(price, discountPercentage) * 100 * counter
-                      )}
-                    </p>
-                  </div>
-                  <div className="Fields">
-                    <p>Items :</p>
-                    <p className="text-decoration-line-through">
-                      <span className="counter d-inline-flex align-items-center">
-                        <button onClick={() => dispatch(CartDecrement(id))}>
-                          -
-                        </button>
-                        <span>{counter}</span>
-                        <button onClick={() => dispatch(CartIncrement(id))}>
-                          +
-                        </button>
-                      </span>
-                    </p>
-                  </div>
-                </li>
 
-                <li className="Item">
-                  <button
-                    className="btn deleteBtn"
-                    onClick={() => dispatch(DeleteProduct(id))}
-                  >
-                    <MdDelete />
-                  </button>
-                </li>
-              </ul>
+                  <div className="Item deleteBtnItem">
+                    <button
+                      className="btn deleteBtn m-auto"
+                      onClick={() => dispatch(DeleteProduct(id))}
+                    >
+                      <MdDelete />
+                    </button>
+                  </div>
+                </div>
+              </div>
             );
           })}
         </div>
@@ -163,7 +157,7 @@ export default function Cart() {
                 </p>
               </li>
             </ul>
-            <div className="d-flex justify-content-between mt-5">
+            <div className="d-grid d-sm-flex justify-content-sm-between mt-5 gap-3">
               <button className="btn checkoutBtn">Proceed To Checkout</button>
               <button className="btn checkoutBtn">Continue Shopping</button>
             </div>

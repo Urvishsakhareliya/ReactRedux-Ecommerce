@@ -12,7 +12,7 @@ function FilterSection({ FilterProductReducer }) {
 
   const {
     All_products,
-    Filter: { categories, brand },
+    Filter: { categories, brand, categoriesC },
   } = FilterProductReducer;
 
   const getUniqueData = (data, property) => {
@@ -25,6 +25,7 @@ function FilterSection({ FilterProductReducer }) {
   const categoriesData = getUniqueData(All_products, "category");
   const brands = getUniqueData(All_products, "brand");
 
+  // console.log(FilterProductReducer.Filter_Product);
   return (
     <>
       <section className="FilterWrapper">

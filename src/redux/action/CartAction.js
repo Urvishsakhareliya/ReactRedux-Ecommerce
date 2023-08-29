@@ -37,8 +37,20 @@ export const DeleteProduct = (id) => {
   };
 };
 export const LocalStorageData = (data) => {
+  let t = getLocalCart();
+  // console.log(t);
   return {
     type: SetLocalCart,
     payload: data,
   };
+};
+
+export const getLocalCart = () => {
+  let GetLocalData = localStorage.getItem("LocalCartData");
+  // console.log(GetLocalData);
+  if (GetLocalData === [] || GetLocalData === "null") {
+    return [];
+  } else {
+    return JSON.parse(GetLocalData);
+  }
 };

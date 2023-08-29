@@ -254,6 +254,29 @@
     .proRow {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .proUl {
+        display: grid;
+        grid-template-columns: none;
+        gap: 20px;
+    }
+
+    .proUl .wrapper {
+        grid-template-columns: none;
+
+    }
+
+    .proUl .deleteBtnItem {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .imgBox {
+        width: 20rem;
+        aspect-ratio: 1;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (max-width: 575px) {

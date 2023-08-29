@@ -13,7 +13,8 @@ const initialState = {
   Sorting_value: "All",
   Filter: {
     SearchValue: "",
-    categories: ["smartphones", "laptops"],
+    categories: "All",
+    categoriesC: [],
     brand: "All",
     maxPrice: 0,
     price: 0,
